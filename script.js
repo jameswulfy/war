@@ -27,13 +27,43 @@ $(document).ready(function() {
 			deck.push({number: j+1, suit: suit});
 		}
 	}
-	
+
 	//shuffle the deck
+
+	function shuffle(array) {
+  var currentIndex = array.length
+    , temporaryValue
+    , randomIndex
+  	;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
+
+
+console.log('first deck', deck);
+shuffle(deck);
+console.log('second deck', deck);
 	
 	
 	var cards_player_1 = [];
 	var cards_player_2 = [];
 	//divide out the cards into the two arrays
+	var cards_player_1 = deck.slice(0,26);
+	var cards_player_2 = deck;
+
 	
 	
 	//create a function (algorithm) called "war" that takes two cards as parameters, compares them and returns a winner. A tie should return false.
