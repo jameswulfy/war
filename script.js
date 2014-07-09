@@ -61,13 +61,23 @@ console.log('second deck', deck);
 	var cards_player_1 = [];
 	var cards_player_2 = [];
 	//divide out the cards into the two arrays
-	var cards_player_1 = deck.slice(0,26);
+	var cards_player_1 = deck.splice(0,26);
 	var cards_player_2 = deck;
 
 	
 	
 	//create a function (algorithm) called "war" that takes two cards as parameters, compares them and returns a winner. A tie should return false.
-	function war() {
+	var war = function(){
+		if (cards_player_1 < cards_player_2) {
+			alert("Player 2 Wins!");
+		}
+		if else (cards_player_1 > cards_player_2){
+			alert("Player 1 Wins!");
+		}
+		else (cards_player_1 === cards_player_2){
+			return false;
+		}
+		
 	}
 	
 	
